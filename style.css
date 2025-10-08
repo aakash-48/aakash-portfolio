@@ -1,0 +1,695 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+/* COLORS */
+:root {
+  --dark: #270245;
+  --light: #fd5d8d;
+  --white: #fff;
+  --neon-pink: #fff;
+  --neon-cyan: #fff;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar .logo.typewriter {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #0915be, 0 0 10px #fff, 0 0 20px #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  margin-right: auto;
+  animation: typeTerminal 10s steps(13, end) infinite;
+}
+
+.navbar .logo.typewriter::after {
+  content: '_';
+  animation: blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typeTerminal {
+  0%, 10% { width: 0; opacity: 1; }
+  40%, 50% { width: 13ch; opacity: 1; }
+  60%, 90% { width: 13ch; opacity: 0; }
+  100% { width: 0; opacity: 0; }
+}
+
+@keyframes blinkCursor {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.45rem;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: .90rem;
+  transition: color 0.3s;
+  padding: 0.35rem 0.9rem;
+}
+
+.navbar ul li a:hover {
+  background-color: #020407;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+/* SECTIONS */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #2b52ff;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Fixed Retro Effects */
+.noise,
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://ice-creme.de/images/background-noise.png");
+  animation: noise 1s infinite alternate;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4) 51%);
+  background-size: 100% 5px;
+  mix-blend-mode: multiply;
+  animation: scanlines 0.2s linear infinite;
+  opacity: 0.6;
+}
+
+
+
+/*
+
+
+/* === RETRO TERMINAL INTRO === */
+.terminal-intro {
+  background-color: #000080;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  color: #fff;
+  width: 80%;
+  max-width: 700px;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Header lights like an old monitor */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  border-bottom: 1px solid #00ffff;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.terminal-title {
+  color: #00ffff;
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.terminal-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.terminal-light.red { background: #ff0040; }
+.terminal-light.yellow { background: #ffff40; }
+.terminal-light.green { background: #00ff40; }
+
+/* Terminal typing screen */
+.terminal-screen {
+  background: #000;
+  padding: 1rem;
+  border: 1px solid #00ffff;
+  min-height: 220px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+/* Highlighted username */
+.highlight {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* Cursor animation */
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: #00ffff;
+  margin-left: 5px;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HOME SECTION */
+
+
+
+.intro-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  z-index: 1;
+}
+
+.terminall-box {
+  background-color: #000080;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 2rem 3rem;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  max-width: 700px;
+  white-space: pre-wrap;
+}
+
+
+
+.terminal-box {
+  background-color: #000080; /* Deep blue, classic Turbo C++ */
+  border: 2px solid #00ffff; /* Cyan border */
+  border-radius: 0; /* Sharp edges like old terminal */
+  padding: 2rem 3rem;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff; /* Changed from #e3f3f3 to plain white */
+  text-shadow: 0 0 2px #fff; /* Reduced glow effect for better readability */
+  position: relative; /* For pseudo-element positioning */
+  min-width: 400px;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  white-space: pre-wrap;
+  text-align: left;
+  resize: both;
+  overflow: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+/* Keep the existing ::before pseudo-element if any */
+.terminal-box::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: -1; /* Ensure it doesn't interfere with existing effects */
+}
+
+/* Line hidden by default */
+.line {
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in effect */
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 2px #fff;
+  margin-bottom: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  white-space: pre;
+  width: 100%;
+  text-align: left;
+}
+
+/* Neon keyword highlight */
+.highlight {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  font-weight: bold;
+}
+
+/* Blinking cursor */
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* PAGE SECTIONS */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #fff;
+  background: rgba(0, 0, 128, 0.5);
+  padding-top: 100px; /* Add padding to avoid overlap with navbar */
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+/* RETRO BUTTON */
+.retro-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #00ffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #000;
+  border: 3px solid #00ffff;
+  position: relative;
+  box-shadow: 0 3px #007a99, 0 6px #007a99;
+  transition: all 0.25s ease-in-out;
+}
+
+.retro-btn:hover {
+  color: #9d00ff;
+  border-color: #9d00ff;
+  transform: translateY(-8px);
+  box-shadow: 0 5px #5a0099, 0 10px #5a0099;
+  text-shadow: 0 0 6px #9d00ff, 0 0 12px #9d00ff;
+}
+
+.retro-btn:active {
+  color: #66ffff;
+  transform: translateY(6px);
+  box-shadow: 0 2px #007a99, 0 4px #007a99;
+}
+
+/* SKILLS SECTION */
+
+/* === RETRO SKILLS GRID (Matches Original Background) === */
+#skills {
+  background: rgba(0, 0, 128, 0.5); /* Same retro deep blue as other sections */
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.skills-terminal {
+  background-color: #000080; /* Deep blue terminal */
+  border: 2px solid #00ffff; /* Cyan glow */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  padding: 2rem;
+  width: 85%;
+  max-width: 900px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  text-shadow: 0 0 3px #00ffff;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header flicker effect */
+.header-line {
+  font-size: 1.2rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+  margin-bottom: 2rem;
+  animation: flicker 3s infinite;
+}
+
+/* Grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Skill Card Design */
+.skill-card {
+  background: #000; /* keeps terminal contrast */
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  padding: 1rem;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.skill-card::before {
+  content: ">";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #9d00ff;
+  opacity: 0.8;
+  animation: blinkCursor 1s step-end infinite;
+}
+
+.skill-card h3 {
+  font-size: 0.9rem;
+  color: #00ffff;
+  margin-bottom: 0.8rem;
+}
+
+.skill-card p {
+  font-size: 0.6rem;
+  color: #fff;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Hover Glow Effect */
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: #9d00ff;
+  box-shadow: 0 0 15px #9d00ff, 0 0 30px #9d00ff;
+  color: #9d00ff;
+}
+
+/* Flickering header animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === CONTACT TERMINAL === */
+.contact-terminal {
+  background-color: #000080; /* Deep retro blue */
+  border: 2px solid #00ffff; /* Cyan glow border */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 5px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 0;
+  padding: 2rem;
+  width: 80%;
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: left;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff; /* White main text */
+  text-shadow: 0 0 3px #00ffff;
+  position: relative;
+}
+
+/* Header text */
+.contact-header {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff;
+  margin-bottom: 1rem;
+}
+
+.contact-sub {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #b0ffff;
+  margin-bottom: 2rem;
+}
+
+/* Labels */
+.contact-form label {
+  display: block;
+  font-size: 0.6rem;
+  margin-bottom: 0.3rem;
+  color: #ffffff; /* White label */
+}
+
+/* Input Fields */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #000;
+  border: 2px solid #00ffff;
+  color: #ffffff; /* White text */
+  padding: 0.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  margin-bottom: 1rem;
+  outline: none;
+  resize: none;
+  text-shadow: 0 0 3px #00ffff;
+}
+
+/* Placeholder color */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ffffff; /* White placeholder */
+  opacity: 0.8;
+}
+
+/* Focus Glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #9d00ff;
+  box-shadow: 0 0 6px #9d00ff, 0 0 12px #9d00ff;
+}
+
+/* Send button */
+.send-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.7rem;
+  background-color: #000;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  box-shadow: 0 3px #007a99, 0 6px #007a99;
+  transition: all 0.25s ease-in-out;
+}
+
+.send-btn:hover {
+  color: #9d00ff;
+  border-color: #9d00ff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px #5a0099, 0 10px #5a0099;
+  text-shadow: 0 0 6px #9d00ff, 0 0 12px #9d00ff;
+}
+
+.send-btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 2px #007a99, 0 4px #007a99;
+}
+
+/* Blinking cursor under header */
+.contact-header::after {
+  content: "_";
+  animation: blinkCursor 1s step-end infinite;
+}
+
+
+
+
+/* === RETRO FOOTER === */
+.retro-footer {
+  background-color: #000080; /* Deep retro blue */
+  border-top: 2px solid #00ffff; /* Cyan border */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  text-shadow: 0 0 3px #00ffff;
+  box-shadow: 0 -3px 15px rgba(0, 255, 255, 0.2);
+  position: relative;
+}
+
+.retro-footer .footer-links {
+  margin-top: 0.8rem;
+}
+
+.retro-footer a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.retro-footer a:hover {
+  color: #9d00ff;
+  text-shadow: 0 0 6px #9d00ff, 0 0 12px #9d00ff;
+}
+
+/* Small blinking cursor after copyright */
+.retro-footer p:first-child::after {
+  content: "_";
+  animation: blinkCursor 1s step-end infinite;
+}
+
+
+
+
+/* ANIMATIONS */
+@keyframes noise {
+  0%,100% { background-position: 0 0; }
+  25% { background-position: -10% 10%; }
+  50% { background-position: 10% -10%; }
+  75% { background-position: 20% 15%; }
+}
+
+@keyframes scanlines {
+  from { background-position: 0 0; }
+  to { background-position: 0 4px; }
+}
+
+#skills .terminal-box {
+    width: 60%; /* Reduced from 80% */
+    max-width: 600px; /* Reduced from 800px */
+    min-height: auto;
+    max-height: none;
+    margin: 2rem auto;
+    padding: 1.2rem 1.5rem; /* Reduced padding */
+}
+
+#skills .skill-container {
+    width: 100%;
+    padding: 0.3rem 0; /* Reduced padding */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 0.8rem;
+}
+
+#skills .skill {
+    margin: 0.6rem 0; /* Reduced margin */
+}
+
+#skills .skill-label {
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem; /* Smaller font */
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+#skills .skill-bar {
+    background: #000;
+    border: 1px solid #00ffff; /* Thinner border */
+    height: 12px; /* Reduced height */
+    position: relative;
+    padding: 1px; /* Reduced padding */
+    overflow: hidden;
+    width: 100%;
+}
+
+#skills .percentage {
+    font-size: 0.5rem; /* Smaller font */
+    z-index: 2;
+    right: 3px; /* Adjusted position */
+}
+
+#skills .progress {
+    height: 100%;
+    background: #00ffff;
+    position: relative;
+    transition: width 2s ease;
+}

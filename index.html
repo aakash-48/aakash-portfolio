@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo typewriter">Aakash Dhami</div>
+    <ul>
+      <li><a href="#home" class="retro-btn">Home</a></li>
+      <li><a href="#about" class="retro-btn">About</a></li>
+      <li><a href="#projects" class="retro-btn">Projects</a></li>
+      <li><a href="#skills" class="retro-btn">Skills</a></li>
+      <li><a href="#contact" class="retro-btn">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Noise & Scanlines -->
+  <div class="noise noise-moving"></div>
+  <div class="scanlines"></div>
+
+  <!-- HOME SECTION -->
+  <!-- HOME SECTION (Retro Terminal Intro Animation) -->
+<section id="home" class="intro-wrap">
+  <div class="terminal-intro">
+    <div class="terminal-header">
+      <span class="terminal-title">AakashOS v1.0</span>
+      <span class="terminal-light red"></span>
+      <span class="terminal-light yellow"></span>
+      <span class="terminal-light green"></span>
+    </div>
+
+    <div class="terminal-screen" id="terminal-screen">
+      <!-- Lines will be typed dynamically -->
+      <span class="cursor">_</span>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="terminal-box">
+      <div class="line" data-text="--------------------------------------------------"></div>
+      <div class="line" data-text=">  ABOUT ME:"></div>
+      <div class="line" data-text="--------------------------------------------------"></div>
+      <div class="line" data-text=">  Student     : Electronic Engineering"></div>
+      <div class="line" data-text=">  Focus       : Web Development & Cybersecurity"></div>
+      <div class="line" data-text=">  Interests   : Interactive Web Projects"></div>
+      <div class="line" data-text=">  Activities  : Fitness & Programming"></div>
+      <div class="line" data-text="--------------------------------------------------"></div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p>Updating  Soon..</p>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  
+<!-- SKILLS SECTION (Updated Retro Grid Style) -->
+<section id="skills" class="section">
+  <div class="skills-terminal">
+    <div class="header-line">> MY SKILLS & EXPERTISE</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>> C / C++</h3>
+        <p>Strong grasp of OOP, data structures & problem solving.</p>
+      </div>
+      <div class="skill-card">
+        <h3>> JavaScript</h3>
+        <p>Building interactive & dynamic web elements.</p>
+      </div>
+      <div class="skill-card">
+        <h3>> HTML / CSS</h3>
+        <p>Pixel-perfect retro layouts with creative styling.</p>
+      </div>
+      <div class="skill-card">
+        <h3>> React JS</h3>
+        <p>Creating modular front-end components and UI.</p>
+      </div>
+      <div class="skill-card">
+        <h3>> Cybersecurity</h3>
+        <p>Learning web vulnerabilities & ethical testing.</p>
+      </div>
+      <div class="skill-card">
+        <h3>> Python</h3>
+        <p>Automation scripts & penetration testing tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+  <div class="contact-terminal">
+    <h2 class="contact-header">Let's Connect!</h2>
+    <p class="contact-sub">Got an idea? Let’s build something amazing together.</p>
+    
+    <form class="contact-form" action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+
+      <button type="submit" class="retro-btn send-btn">Send</button>
+    </form>
+  </div>
+</section>
+<!-- FOOTER SECTION -->
+<footer class="retro-footer">
+  <p>© 2025 Aakash Dhami | Designed with Html Css and Js in Retro Style</p>
+  <p class="footer-links">
+    <a href="https://github.com/aakash-48" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/aakash-dhami-078743371/" target="_blank">LinkedIn</a> |
+    <a href="#home">Back to Top</a>
+  </p>
+</footer>
+
+
+  <script>
+    Splitting(); // splits "Aakash Dhami" into letters
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
